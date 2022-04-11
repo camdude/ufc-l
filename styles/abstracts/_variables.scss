@@ -1,0 +1,35 @@
+// Colour
+$color-primary: #F4BC19;
+$color-primary-light: lighten($color-primary, 12);
+$color-primary-dark: #E3AA17;
+
+$color-secondary: #2E3B42;
+$color-secondary-light: lighten($color-secondary, 8);
+$color-secondary-dark: darken($color-secondary, 8);
+
+$color-tertiary: #EBEFF1;
+$color-tertiary-light: lighten($color-tertiary, 8);
+$color-tertiary-dark: darken($color-tertiary, 8);
+
+$color-danger: #cc0000;
+$color-warning: #dd820a;
+$color-success: #50b04d;
+
+$color-white: #ffffff;
+$color-grey-lighter: #eeeeee;
+$color-grey-light: #e3e3e3;
+$color-grey: #d9d9d9;
+$color-grey-dark: #5e5e5e;
+$color-grey-darker: #444444;
+$color-black: #353535;
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");            //Roboto
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');  //Raleway
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');         //Open Sans
+
+$default-font-family: "Roboto", sans-serif;
+$default-font-family-heading: "Raleway", sans-serif;
+$default-font-family-paragraph: "Opens Sans", sans-serif;
+$default-font-size: 1.6rem;
+$default-font-color: $color-grey-dark;
