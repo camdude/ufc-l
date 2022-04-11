@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = () => {
@@ -18,7 +19,16 @@ const Navbar = () => {
             }}
           />
         </div>
-        <div className="Navbar__title">Uni Fellowship</div>
+        <Link href="/">
+          <a className="Navbar__logo">
+            <Image
+              src="/../public/logos/University Fellowship logo REV MID.png"
+              width={597 / 6}
+              height={298 / 6}
+              alt="Uni Fellowship"
+            />
+          </a>
+        </Link>
       </div>
       <ul className={`Navbar__list ${navOpen ? "Navbar__list--open" : ""}`}>
         <li className="Navbar__item">

@@ -6,6 +6,7 @@
   min-height: 40px;
   background: $color-grey-darker;
   color: $color-white;
+  z-index: 100;
 
   @include respond(tab-port) {
     flex-direction: column;
@@ -47,9 +48,10 @@
     }
   }
 
-  &__title {
-    display: block;
-    padding: 1rem;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
     font-size: 2em;
     font-weight: 700;
 
