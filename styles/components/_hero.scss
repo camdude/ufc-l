@@ -13,11 +13,10 @@
 
   &__heading {
     margin-bottom: 2rem;
-    font-family: "Raleway", "Times New Roman", Times, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 6rem;
     font-weight: 500;
     line-height: 1.25;
-    text-transform: capitalize;
 
     @include respond(phone) {
       font-size: 4.2rem;
