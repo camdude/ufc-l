@@ -30,21 +30,30 @@ const Footer = () => {
             <li className="Footer__listItem">
               <a
                 className="Footer__link link"
-                href="https://afes.org.au/"
+                href="https://focustas.org"
                 target="blank"
               >
-                AFES
+                <FontAwesomeIcon icon={["fac", "focus"]} /> FOCUS
               </a>
             </li>
             <li className="Footer__listItem">
               <a
                 className="Footer__link link"
+                href="https://afes.org.au/"
+                target="blank"
+              >
+                <FontAwesomeIcon icon={["fac", "afes"]} /> AFES
+              </a>
+            </li>
+            {/* <li className="Footer__listItem">
+              <a
+                className="Footer__link link"
                 href="https://headingtouni.info"
                 target="blank"
               >
-                Heading to Uni
+                <FontAwesomeIcon icon={["fac", "headingToUni"]} /> Heading to Uni
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="Footer__section">

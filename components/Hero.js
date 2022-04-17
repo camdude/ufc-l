@@ -6,7 +6,7 @@ export default function Hero() {
     <div className="Hero">
       <div className="Hero__feather">
         <Image
-          src="/../public/social-logos/feather.png"
+          src="/../static/social-logos/feather.png"
           width={360}
           height={360}
           alt="feather"

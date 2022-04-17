@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Navbar = () => {
+export default function Navbar({ paths }) {
   const [navOpen, setnavOpen] = useState(false);
 
   return (
@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link href="/">
           <a className="Navbar__logo">
             <Image
-              src="/../public/logos/University Fellowship logo REV MID.png"
+              src="/../static/logos/University Fellowship logo REV MID.png"
               width={597 / 6}
               height={298 / 6}
               alt="Uni Fellowship"
@@ -36,24 +36,29 @@ const Navbar = () => {
             <a className="Navbar__link">Home</a>
           </Link>
         </li>
-        <li className="Navbar__item">
-          <Link href="/about">
-            <a className="Navbar__link">About</a>
-          </Link>
-        </li>
-        <li className="Navbar__item">
-          <Link href="/events">
-            <a className="Navbar__link">Events</a>
-          </Link>
-        </li>
-        <li className="Navbar__item">
-          <Link href="/contact">
-            <a className="Navbar__link">Contact</a>
-          </Link>
-        </li>
+        {paths.sections.map((s) => {
+          return (
+            <li className="Navbar__item" key={s._key}>
+              <Link href={`/${s.target.slug.current}`}>
+                <a className="Navbar__link">{s.title}</a>
+              </Link>
+              {s.links ? (
+                <ul className="Navbar__subList">
+                  {s.links.map((l) => {
+                    return (
+                      <li className="Navbar__subItem" key={l._key}>
+                        <Link href={`/${l.target.slug.current}`}>
+                          <a className="Navbar__subLink">{l.target.title}</a>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : null}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
-};
-
-export default Navbar;
+}

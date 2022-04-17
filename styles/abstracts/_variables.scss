@@ -4,12 +4,12 @@ $color-primary-light: lighten($color-primary, 12);
 $color-primary-dark: darken($color-primary, 12);
 
 $color-secondary: #2e3b42;
-$color-secondary-light: lighten($color-secondary, 8);
+$color-secondary-light: lighten($color-secondary, 12);
 $color-secondary-dark: darken($color-secondary, 8);
 
 $color-tertiary: #ebeff1;
-$color-tertiary-light: lighten($color-tertiary, 8);
-$color-tertiary-dark: darken($color-tertiary, 8);
+$color-tertiary-light: lighten($color-tertiary, 12);
+$color-tertiary-dark: darken($color-tertiary, 12);
 
 $color-danger: #cc0000;
 $color-warning: #dd820a;
