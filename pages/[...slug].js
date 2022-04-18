@@ -1,6 +1,7 @@
 import BlockContent from "@sanity/block-content-to-react";
 import { getNavigation, getPagebySlug } from "../lib/api";
 import Layout from "../layouts/MainLayout";
+import { useRouter } from "next/router";
 
 const overrides = {
   h1: (props) => <h1 className="blog__h1" {...props} />,
@@ -36,7 +37,9 @@ const serializers = {
 };
 
 export default function Page({ navPaths, page }) {
-  if (!page) {
+  const router = useRouter();
+
+  if (!router.isFallback && !page?.length) {
     return (
       <Layout
         meta={{
@@ -51,6 +54,22 @@ export default function Page({ navPaths, page }) {
         <main className="main-body">
           <h1 className="heading-primary u-center-text">ERROR 404</h1>
         </main>
+      </Layout>
+    );
+  }
+
+  if (router.isFallback) {
+    return (
+      <Layout
+        meta={{
+          title: "",
+          type: "",
+          image: "",
+          url: ``,
+          desc: "",
+        }}
+      >
+        <main className="main-body"></main>
       </Layout>
     );
   }
@@ -84,6 +103,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const nav = await getNavigation();
+  console.log(nav);
   var navPaths = [];
   nav.sections.map((s) => {
     if (s.links) {

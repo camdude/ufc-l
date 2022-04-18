@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Navbar({ paths }) {
+export default function Navbar({ paths={sections: []} }) {
   const [navOpen, setnavOpen] = useState(false);
 
   return (
