@@ -1,0 +1,26 @@
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  
+
+  @include respond(tab-port) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__img {
+    position: relative;
+    &:hover {
+      cursor: pointer;
+      filter: brightness(50%);
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+  }
+}

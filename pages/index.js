@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
 import MainLayout from "../layouts/MainLayout";
@@ -17,7 +19,42 @@ export default function Home({ navPaths }) {
     >
       <Hero />
       <Section color="primary">
-        <h2 className="heading-secondary">Gallery</h2>
+        <h2 className="heading-secondary">Events</h2>
+        <div className="gallery">
+          <Link href={`/events`}>
+            <div className="gallery__img">
+              <Image
+                src="/../static/bitb.png"
+                width={500 / 2}
+                height={350 / 2}
+                alt="Bible in the Bar"
+              />
+              <h3 className="gallery__title">Bible in the Bar</h3>
+            </div>
+          </Link>
+          <Link href={`/events`}>
+            <div className="gallery__img">
+              <Image
+                src="/../static/bible-groups.png"
+                width={500 / 2}
+                height={350 / 2}
+                alt="Bible Groups"
+              />
+              <h3 className="gallery__title">Bible Groups</h3>
+            </div>
+          </Link>
+          <Link href={`/events`}>
+            <div className="gallery__img">
+              <Image
+                src="/../static/connect.png"
+                width={500 / 2}
+                height={350 / 2}
+                alt="Connect Events"
+              />
+              <h3 className="gallery__title">Connect Events</h3>
+            </div>
+          </Link>
+        </div>
       </Section>
       <Section color="tertiary">
         <h2 className="heading-secondary">Starting Uni?</h2>
@@ -30,17 +67,6 @@ export default function Home({ navPaths }) {
         <Button href="https://headingtouni.info">Heading to Uni</Button>
       </Section>
       <Section color="secondary">
-        <h2 className="heading-secondary">Events</h2>
-        <p>
-          We plan all our events and activities to help us share the gospel of
-          Jesus with the Hobart campuses of UTAS and to equip Christian
-          university students in the Christian life and ministry, order to raise
-          up a new generation of pastors, missionaries, church planters,
-          evangelists, youth leaders and active church members. See the sub menu
-          items in the main sidebar navigation menu.
-        </p>
-      </Section>
-      <Section color="primary">
         <h2 className="heading-secondary">Get In Touch</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
