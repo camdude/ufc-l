@@ -24,7 +24,7 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src="/../static/bitb.png"
+                src="/../public/images/bitb.png"
                 width={500 / 2}
                 height={350 / 2}
                 alt="Bible in the Bar"
@@ -35,7 +35,7 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src="/../static/bible-groups.png"
+                src="/../public/images/bible-groups.png"
                 width={500 / 2}
                 height={350 / 2}
                 alt="Bible Groups"
@@ -46,7 +46,7 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src="/../static/connect.png"
+                src="/../public/images/connect.png"
                 width={500 / 2}
                 height={350 / 2}
                 alt="Connect Events"
