@@ -1,7 +1,10 @@
 import BlockContent from "@sanity/block-content-to-react";
-import { getNavigation, getPagebySlug } from "../lib/api";
+import { getNavigation, getPagebySlug, urlFor } from "../lib/api";
 import Layout from "../layouts/MainLayout";
+import Section from "../layouts/Section";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import ImageWithHideOnError from "../hooks/ImageWithHideOnError";
 
 const overrides = {
   h1: (props) => <h1 className="blog__h1" {...props} />,
@@ -84,9 +87,20 @@ export default function Page({ navPaths, page }) {
       }}
       paths={navPaths}
     >
-      <main className="main-body">
+      {page[0].coverImage ? (
+        <div className="Page__banner">
+          <ImageWithHideOnError
+            src={urlFor(page[0]?.coverImage).url()}
+            height={1080}
+            width={1920}
+            alt={`${page[0].title} Banner`}
+          />
+        </div>
+      ) : null}
+
+      <div className="Page__content">
         <BlockContent blocks={page[0].content} serializers={serializers} />
-      </main>
+      </div>
     </Layout>
   );
 }

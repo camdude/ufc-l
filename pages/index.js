@@ -64,7 +64,9 @@ export default function Home({ navPaths }) {
           we&apos;d love to put you in touch with the AFES group there!
         </p>
         <br />
-        <Button href="https://headingtouni.info">Heading to Uni</Button>
+        <Button href="https://ufcutas.elvanto.com.au/form/4fceb37b-1817-4c5d-89e7-243a3d0fe52e">I&apos;m at UTAS</Button>
+        <br />  
+        <Button href="https://headingtouni.info">Other University Christian Groups</Button>
       </Section>
       <Section color="secondary">
         <h2 className="heading-secondary">Get In Touch</h2>

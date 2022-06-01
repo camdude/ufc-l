@@ -108,7 +108,8 @@
       border-bottom: 1px solid $color-secondary;
       padding: 1rem 4rem;
       width: 100%;
-      background-color: $color-secondary-light;
+      color: $color-black;
+      background-color: $color-grey;
     }
   }
 
@@ -120,6 +121,7 @@
     left: 0;
     list-style: none;
     width: 100%;
+    z-index: 100;
 
     @include respond(tab-port) {
       display: flex;
@@ -139,7 +141,7 @@
     padding: 0.5rem 4rem 0.5rem 6rem;
     color: $color-secondary;
     text-decoration: none;
-    background-color: $color-tertiary-dark;
+    background-color: $color-grey-light;
 
     &:hover {
       color: $color-black;
