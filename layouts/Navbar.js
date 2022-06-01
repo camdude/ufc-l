@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Logo from "../public/logos/University Fellowship logo MONO REV MID.png";
+import Logo from "../public/logos/University Fellowship logo REV MID.png";
 
 export default function Navbar({ paths={sections: []} }) {
   const [navOpen, setnavOpen] = useState(false);

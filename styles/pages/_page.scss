@@ -15,7 +15,7 @@
         padding: 3rem 20%;
         width: 100%;
         color: $color-black;
-        background: $color-grey-light;
+        background: $color-grey-lighter;
       
         & p > a:link,
         & p > a:visited {
@@ -23,7 +23,7 @@
       
           &:hover,
           &:active {
-            color: $color-secondary-dark;
+            color: $color-primary-dark;
           }
         }
       

@@ -27,12 +27,12 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src={ImageBitb}
+                src={ImageConnect}
                 width={500 / 2}
                 height={350 / 2}
-                alt="Bible in the Bar"
+                alt="Connect Events"
               />
-              <h3 className="gallery__title">Bible in the Bar</h3>
+              <h3 className="gallery__title">Connect Events</h3>
             </div>
           </Link>
           <Link href={`/events`}>
@@ -49,12 +49,12 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src={ImageConnect}
+                src={ImageBitb}
                 width={500 / 2}
                 height={350 / 2}
-                alt="Connect Events"
+                alt="Bible in the Bar"
               />
-              <h3 className="gallery__title">Connect Events</h3>
+              <h3 className="gallery__title">Bible in the Bar</h3>
             </div>
           </Link>
         </div>
@@ -67,9 +67,13 @@ export default function Home({ navPaths }) {
           we&apos;d love to put you in touch with the AFES group there!
         </p>
         <br />
-        <Button href="https://ufcutas.elvanto.com.au/form/4fceb37b-1817-4c5d-89e7-243a3d0fe52e">I&apos;m at UTAS</Button>
-        <br />  
-        <Button href="https://headingtouni.info">Other University Christian Groups</Button>
+        <Button href="https://ufcutas.elvanto.com.au/form/4fceb37b-1817-4c5d-89e7-243a3d0fe52e">
+          I&apos;m at UTAS
+        </Button>
+        <br />
+        <Button href="https://headingtouni.info">
+          Other University Christian Groups
+        </Button>
       </Section>
       <Section color="secondary">
         <h2 className="heading-secondary">Get In Touch</h2>

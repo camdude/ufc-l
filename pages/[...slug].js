@@ -1,31 +1,29 @@
 import BlockContent from "@sanity/block-content-to-react";
 import { getNavigation, getPagebySlug, urlFor } from "../lib/api";
 import Layout from "../layouts/MainLayout";
-import Section from "../layouts/Section";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import ImageWithHideOnError from "../hooks/ImageWithHideOnError";
 
 const overrides = {
-  h1: (props) => <h1 className="blog__h1" {...props} />,
-  h2: (props) => <h2 className="blog__h2" {...props} />,
-  h3: (props) => <h3 className="blog__h3" {...props} />,
-  h4: (props) => <h3 className="blog__h4" {...props} />,
-  h5: (props) => <h3 className="blog__h5" {...props} />,
-  h6: (props) => <h3 className="blog__h6" {...props} />,
-  a: (props) => <a className="blog__a" {...props} />,
-  blockquote: (props) => <blockquote className="blog__quote" {...props} />,
+  h1: (props) => <h1 className="block__h1" {...props} />,
+  h2: (props) => <h2 className="block__h2" {...props} />,
+  h3: (props) => <h3 className="block__h3" {...props} />,
+  h4: (props) => <h3 className="block__h4" {...props} />,
+  h5: (props) => <h3 className="block__h5" {...props} />,
+  h6: (props) => <h3 className="block__h6" {...props} />,
+  a: (props) => <a className="block__a" {...props} />,
+  blockquote: (props) => <blockquote className="block__quote" {...props} />,
   normal: (props) =>
     props.children[0] === "" ? (
-      <div className="blog__break" />
+      <div className="block__break" />
     ) : (
-      <p className="blog__paragraph" {...props} />
+      <p className="block__paragraph" {...props} />
     ),
 };
 
 const serializers = {
-  list: (props) => <ul className="blog__list" {...props} />,
-  listItem: (props) => <li className="blog__listItem" {...props} />,
+  list: (props) => <ul className="block__list" {...props} />,
+  listItem: (props) => <li className="block__listItem" {...props} />,
   types: {
     block: (props) => {
       // Check if we have an override for the “style”
