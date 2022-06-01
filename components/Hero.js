@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import ImageFeather from "../public/social-logos/feather.png"
 
 export default function Hero() {
   return (
     <div className="Hero">
       <div className="Hero__feather">
         <Image
-          src="/../static/social-logos/feather.png"
+          src={ImageFeather}
           width={360}
           height={360}
           alt="feather"

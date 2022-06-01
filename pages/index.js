@@ -5,6 +5,9 @@ import Hero from "../components/Hero";
 import MainLayout from "../layouts/MainLayout";
 import Section from "../layouts/Section";
 import { getNavigation } from "../lib/api";
+import ImageBitb from "../public/images/bitb.png";
+import ImageBibleGroups from "../public/images/bible-groups.png";
+import ImageConnect from "../public/images/connect.png";
 
 export default function Home({ navPaths }) {
   return (
@@ -24,7 +27,7 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src="/../public/images/bitb.png"
+                src={ImageBitb}
                 width={500 / 2}
                 height={350 / 2}
                 alt="Bible in the Bar"
@@ -35,7 +38,7 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src="/../public/images/bible-groups.png"
+                src={ImageBibleGroups}
                 width={500 / 2}
                 height={350 / 2}
                 alt="Bible Groups"
@@ -46,7 +49,7 @@ export default function Home({ navPaths }) {
           <Link href={`/events`}>
             <div className="gallery__img">
               <Image
-                src="/../public/images/connect.png"
+                src={ImageConnect}
                 width={500 / 2}
                 height={350 / 2}
                 alt="Connect Events"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Logo from "../public/logos/University Fellowship logo MONO REV MID.png";
 
 export default function Navbar({ paths={sections: []} }) {
   const [navOpen, setnavOpen] = useState(false);
@@ -22,7 +23,7 @@ export default function Navbar({ paths={sections: []} }) {
         <Link href="/">
           <a className="Navbar__logo">
             <Image
-              src="/../static/logos/University Fellowship logo REV MID.png"
+              src={Logo}
               width={597 / 6}
               height={298 / 6}
               alt="Uni Fellowship"
