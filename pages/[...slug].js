@@ -39,6 +39,7 @@ const serializers = {
 
 export default function Page({ navPaths, page }) {
   const router = useRouter();
+  console.log(page);
 
   if (!router.isFallback && !page?.length) {
     return (
@@ -97,7 +98,28 @@ export default function Page({ navPaths, page }) {
       ) : null}
 
       <div className="Page__content">
-        <BlockContent blocks={page[0].content} serializers={serializers} />
+        {page[0].pageBuilder.map((s) => {
+          switch (s._type) {
+            case "textBlock":
+              return (
+                <div key={s._key}>
+                  <h1 className="block__h1">{s.heading}</h1>
+                  <BlockContent blocks={s.content} serializers={serializers} />
+                </div>
+              );
+            case "callToAction":
+              return (
+                <div key={s._key}>
+                  <h1 className="block__h1">{s.heading}</h1>
+                  <BlockContent blocks={s.content} serializers={serializers} />
+                </div>
+              );
+            case "gallery":
+              return <div key={s._key}></div>;
+            case "form":
+              return <div key={s._key}></div>;
+          }
+        })}
       </div>
     </Layout>
   );
