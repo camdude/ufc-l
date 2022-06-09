@@ -6,6 +6,7 @@ import ImageWithHideOnError from "../hooks/ImageWithHideOnError";
 import Section from "../layouts/Section";
 import Button from "../components/Button";
 import Hero from "../components/Hero";
+import CardGallery from "../components/CardGallery";
 
 const overrides = {
   h1: (props) => <h1 className="block__h1" {...props} />,
@@ -45,7 +46,7 @@ const serializers = {
 
 export default function Page({ navPaths, page }) {
   const router = useRouter();
-  console.log(page);
+  console.log(page, !page?.length);
 
   if (!router.isFallback && !page?.length) {
     return (
@@ -111,7 +112,12 @@ export default function Page({ navPaths, page }) {
               </Section>
             );
           case "gallery":
-            return <div key={s._key}></div>;
+            return (
+              <Section color={s.colour} key={s._key}>
+                <h2 className="heading-secondary">{s.heading}</h2>
+                <CardGallery cards={s.images} />
+              </Section>
+            );
           case "form":
             return <div key={s._key}></div>;
           case "hero":

@@ -3,11 +3,15 @@
   justify-content: space-between;
   flex-direction: row;
 
-  
-
   @include respond(tab-port) {
     align-items: center;
+    // flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  @include respond(phone) {
     flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   &__img {
@@ -23,5 +27,6 @@
     position: absolute;
     left: 1rem;
     bottom: 1rem;
+    color: $color-white;
   }
 }
