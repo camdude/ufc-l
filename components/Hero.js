@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import ImageFeather from "../public/social-logos/feather.png"
+import ImageFeather from "../public/social-logos/feather.png";
 
-export default function Hero() {
+export default function Hero({ title, subtitle, cta, link }) {
   return (
     <div className="Hero">
       <div className="Hero__feather">
@@ -13,17 +13,11 @@ export default function Hero() {
           alt="feather"
         ></Image>
       </div>
-      <h1 className="Hero__heading">
-        University Fellowship <br />
-        of Christians
-      </h1>
-      <p className="Hero__desc">
-        For everyone on campus in Launceston to have a chance hear about Jesus
-        and what he has done for them so that they may come to know and love him
-      </p>
+      <h1 className="Hero__heading">University Fellowship <br /> of Christians</h1>
+      <p className="Hero__desc">{subtitle}</p>
       <div className="Hero__cta">
-        <Link href="/about">
-          <a className="Hero__ctaLink">Who we are</a>
+        <Link href={link}>
+          <a className="Hero__ctaLink">{cta}</a>
         </Link>
       </div>
     </div>

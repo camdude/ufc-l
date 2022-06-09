@@ -3,6 +3,9 @@ import { getNavigation, getPagebySlug, urlFor } from "../lib/api";
 import Layout from "../layouts/MainLayout";
 import { useRouter } from "next/router";
 import ImageWithHideOnError from "../hooks/ImageWithHideOnError";
+import Section from "../layouts/Section";
+import Button from "../components/Button";
+import Hero from "../components/Hero";
 
 const overrides = {
   h1: (props) => <h1 className="block__h1" {...props} />,
@@ -33,6 +36,9 @@ const serializers = {
           overrides[props.node.style]({ children: props.children })
         : // otherwise, fallback to the provided default with all props
           BlockContent.defaultSerializers.types.block(props);
+    },
+    button: (props) => {
+      return <Button href={props.node.url}>{props.node.title}</Button>;
     },
   },
 };
@@ -96,31 +102,30 @@ export default function Page({ navPaths, page }) {
           />
         </div>
       ) : null}
-
-      <div className="Page__content">
-        {page[0].pageBuilder.map((s) => {
-          switch (s._type) {
-            case "textBlock":
-              return (
-                <div key={s._key}>
-                  <h1 className="block__h1">{s.heading}</h1>
-                  <BlockContent blocks={s.content} serializers={serializers} />
-                </div>
-              );
-            case "callToAction":
-              return (
-                <div key={s._key}>
-                  <h1 className="block__h1">{s.heading}</h1>
-                  <BlockContent blocks={s.content} serializers={serializers} />
-                </div>
-              );
-            case "gallery":
-              return <div key={s._key}></div>;
-            case "form":
-              return <div key={s._key}></div>;
-          }
-        })}
-      </div>
+      {page[0].pageBuilder.map((s) => {
+        switch (s._type) {
+          case "textBlock":
+            return (
+              <Section color={s.colour} key={s._key}>
+                <BlockContent blocks={s.content} serializers={serializers} />
+              </Section>
+            );
+          case "gallery":
+            return <div key={s._key}></div>;
+          case "form":
+            return <div key={s._key}></div>;
+          case "hero":
+            return (
+              <Hero
+                key={s._key}
+                title={s.heading}
+                subtitle={s.subtitle}
+                cta={s.buttonText}
+                link={s.buttonLink}
+              />
+            );
+        }
+      })}
     </Layout>
   );
 }
